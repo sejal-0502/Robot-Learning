@@ -22,7 +22,7 @@ class BCAgent:
                           verbose=False)
 
 
-def update(self, X_batch, y_batch, grad = True):
+    def update(self, X_batch, y_batch, grad = True):
         # TODO: transform input to tensors
         # TODO: forward + backward + optimize
         x = torch.Tensor(X_batch).to(self.device)
@@ -43,6 +43,7 @@ def update(self, X_batch, y_batch, grad = True):
         X = torch.Tensor(X).to(self.device)
         outputs = self.net(X)
         return outputs
+
 
     def load(self, file_name):
         self.net.load_state_dict(torch.load(file_name))
