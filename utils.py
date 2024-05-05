@@ -14,7 +14,7 @@ def rgb2gray(rgb):
     this method converts rgb images to grayscale.
     """
     gray = np.dot(rgb[..., :3], [0.2125, 0.7154, 0.0721])
-    return gray.astype('float32')
+    return gray.astype("float32")
 
 
 def action_to_id(a):
@@ -58,12 +58,12 @@ def show_hist(Y, save):
     values, count = np.unique(np.array(Y), return_counts=True)
     Y_dict = dict(zip(values, count))
     print(Y_dict)
-    plt.bar(Y_dict.keys(), Y_dict.values(), color='g')
+    plt.bar(Y_dict.keys(), Y_dict.values(), color="r")
     plt.xticks([0, 1, 2, 3])
-    plt.xlabel("Action id")
-    plt.ylabel("Number of samples")
+    plt.xlabel("Action-ID")
+    plt.ylabel("Samples count")
     plt.title(save)
-    plt.savefig(f'./figs/Histogram_{save}.png', transparent=False, facecolor='white')
+    plt.savefig(f"../figs/Histogram_{save}.png", transparent=False, facecolor="white")
     plt.show()
 
 
@@ -103,4 +103,4 @@ class EpisodeStats:
 
     def get_action_usage(self, action_id):
         ids = np.array(self.actions_ids)
-        return (len(ids[ids == action_id]) / len(ids))
+        return len(ids[ids == action_id]) / len(ids)
