@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Imitation and Reinforcement Learning exercise for Deep Learning Lab 2023. 
 Tested with python 3.7 and 3.8
 
